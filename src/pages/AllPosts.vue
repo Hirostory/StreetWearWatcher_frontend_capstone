@@ -1,4 +1,5 @@
 <template>
+  <router-link to="/new"><button>Post a Style</button></router-link>
    <div>
     <div class="post" v-for="post of posts" :key="post._id">
       <router-link :to="{ name: 'post', params: { id: post._id } }">
@@ -7,22 +8,21 @@
       </router-link>
     </div>
   </div>
-
 </template>
   
   <script>
     export default {
       name: "AllPost",
       props: {
-        posts: Array
-      }
+        posts: Array,
+      },
     };
   </script>
   
   <style>
   .post {
     text-align: center;
-    border: 3px solid green;
+    border: 3px solid black;
     margin: 10px auto;
     width: 80%;
   }

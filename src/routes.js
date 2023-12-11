@@ -9,7 +9,7 @@ import UserForm from "./pages/UserForm"
 /////////////////////////
 export default [
   // main page that shows all todos
-  { path: "/", component: AllPosts },
+  { path: "/", component: AllPosts, props: (route) => ({ posts: route.posts }) },
   // page for seeing an individual todo
   { path: "/post/:id", component: SinglePost, name: "post" },
   // route for creating a new todo

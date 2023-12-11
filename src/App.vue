@@ -1,6 +1,7 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+  <img alt="street image" src="https://i.pinimg.com/564x/fd/0d/3b/fd0d3b6771a4079b99cb9f377e731ab6.jpg">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <router-view />
 </template>
 
 <script>
@@ -22,5 +23,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+img {
+  height: 300px;
+  width: 400px;
+  object-fit: cover;
 }
 </style>

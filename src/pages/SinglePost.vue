@@ -4,6 +4,9 @@
       <div v-if="post" class="post">
         <img :src="post.image" alt="Post Image" class="target-image">
         <h1>{{ post.description }}</h1>
+        {{ console.log("this is posts", post.image) }}
+        <router-link :to="{name: 'edit', params: {id: post.id}}"
+            ><button>Edit Todo</button></router-link>
         <div v-if="topsForPost && topsForPost.length > 0" class="tops-section">
           <h2>Tops</h2>
           <div class="tops-container">
@@ -37,6 +40,7 @@
       post() {
         const postId = this.$route.params.id;
         return this.posts.find(post => post._id === postId);
+        
       },
       topsForPost() {
         if (this.post && this.tops && this.post.tops) {

@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import { useRoute, useRouter } from "vue-router";
-import { ref, toRefs } from "vue";
+import { useRoute, useRouter } from "vue-router"
+import { ref, toRefs } from "vue"
 
 export default {
   name: "UserForm",
@@ -16,18 +16,21 @@ export default {
   setup(props) {
     const route = useRoute();
     const router = useRouter();
-    const { styletargetsUrl, posts } = toRefs(props);
+    const { styletargetsUrl, posts, getPosts } = toRefs(props);
+    console.log("this is the styletargetURL: ", styletargetsUrl.value)
+    console.log("this is the getPosts: ", getPosts.value )
     const image = ref("");
     const description = ref("");
-    let buttonLabel;
-    let handleSubmit;
-    console.log("if this is passing", posts)
+    let buttonLabel
+    let handleSubmit
+    console.log("if this is post: ", posts.value)
     if (route.name === "edit") {
-      const postId = route.params.id;
-      const postToUpdate = posts.value.find(post => post.id === postId);
-      image.value = postToUpdate.image;
-      description.value = postToUpdate.description;
-      buttonLabel = "Edit Post";
+      const postId = route.params.id
+      const styleToUpdate = posts.value.find((p) => p.id == postId);
+      console.log("this is styletoupdate: ", styleToUpdate)
+      image.value = styleToUpdate.image
+      description.value = styleToUpdate.description;
+      buttonLabel = "Edit Style"
       
       handleSubmit = async () => {
         await fetch(styletargetsUrl.value + postId + "/", {
@@ -41,14 +44,15 @@ export default {
           }),
         });
 
-        
+        getPosts.value()
+        // getPosts().value
         router.push("/");
       };
     } else {
       buttonLabel = "Create Post";
 
       handleSubmit = async () => {
-        await fetch(styletargetsUrl, {
+        await fetch(styletargetsUrl.value, {
           method: "post",
           headers: {
             "Content-Type": "application/json",
@@ -59,6 +63,8 @@ export default {
           }),
         });
         
+        getPosts.value()
+        // getPosts().value
         router.push("/");
       };
     }

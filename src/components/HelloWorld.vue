@@ -8,11 +8,11 @@
 
 <script>
 import { ref, onMounted } from 'vue';
-
+export const styletargetsUrl = "https://capstonefashion-1061b525260f.herokuapp.com/styletarget";
 export default {
   name: "HelloWorld",
   setup(props) {
-    const styletargetsUrl = "https://capstonefashion-1061b525260f.herokuapp.com/styletarget";
+    
     const topsUrl = "https://capstonefashion-1061b525260f.herokuapp.com/top";
 
     const styletargets = ref([]);

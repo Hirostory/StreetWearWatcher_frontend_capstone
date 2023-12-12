@@ -9,19 +9,19 @@
 <script>
 import { useRoute, useRouter } from "vue-router";
 import { ref, toRefs } from "vue";
-conosle.log("if passing from helloworld: ", post)
+
 export default {
   name: "UserForm",
-  props: [styletargetsUrl, posts, getPosts],
+  props: ["styletargetsUrl", "posts", "getPosts"],
   setup(props) {
     const route = useRoute();
     const router = useRouter();
-    const { styletargetsUrl, posts, getPosts } = toRefs(props);
+    const { styletargetsUrl, posts } = toRefs(props);
     const image = ref("");
     const description = ref("");
     let buttonLabel;
     let handleSubmit;
-
+    console.log("if this is passing", posts)
     if (route.name === "edit") {
       const postId = route.params.id;
       const postToUpdate = posts.value.find(post => post.id === postId);
@@ -41,14 +41,14 @@ export default {
           }),
         });
 
-        getPosts().value;
+        
         router.push("/");
       };
     } else {
       buttonLabel = "Create Post";
 
       handleSubmit = async () => {
-        await fetch(styletargetsUrl.value, {
+        await fetch(styletargetsUrl, {
           method: "post",
           headers: {
             "Content-Type": "application/json",
@@ -58,7 +58,7 @@ export default {
             description: description.value,
           }),
         });
-        getPosts().value;
+        
         router.push("/");
       };
     }

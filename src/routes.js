@@ -3,7 +3,7 @@
 /////////////////////////
 import AllPosts from "./pages/AllPosts.vue";
 import SinglePost from "./pages/SinglePost.vue";
-import UserForm from "./pages/UserForm"
+import UserForm from "./pages/UserForm.vue"
 /////////////////////////
 // Array of Routes
 /////////////////////////

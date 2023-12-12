@@ -1,5 +1,4 @@
 <template>
-  <router-link to="/new"><button>Post a Style</button></router-link>
    <div>
     <div class="post" v-for="post of posts" :key="post._id">
       <router-link :to="{ name: 'post', params: { id: post._id } }">

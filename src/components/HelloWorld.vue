@@ -1,7 +1,8 @@
 <template>
   <div>
     <h1>Street Wear Watcher</h1>
-    <router-view :posts="posts" :tops="tops" :styletargets="styletargets" />
+    <router-link to="/new"><button>Post a Style</button></router-link>
+    <router-view :posts="posts" :tops="tops" :styletargets="styletargets" :styletargetsUrl="styletargetsUrl" :getPosts="getPosts" />
   </div>
 </template>
 
@@ -37,11 +38,9 @@ export default {
       await fetchData(topsUrl, tops);
     };
 
+    //frist try 
     const getPosts = async () => {
-      const response = await fetch(styletargetsUrl); // Fetch posts from styletarget endpoint
-      const data = await response.json();
-      posts.value = data;
-      console.log("Posts data:", posts.value);
+      await fetchData(styletargetsUrl, posts)
     };
 
     onMounted(async () => {
@@ -52,6 +51,7 @@ export default {
       posts,
       styletargets,
       tops,
+      getPosts,
       ...props
     };
   },

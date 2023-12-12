@@ -4,8 +4,6 @@
       <div v-if="post" class="post">
         <img :src="post.image" alt="Post Image" class="target-image">
         <h1>{{ post.description }}</h1>
-  
-        <!-- Render tops images -->
         <div v-if="topsForPost && topsForPost.length > 0" class="tops-section">
           <h2>Tops</h2>
           <div class="tops-container">
@@ -51,14 +49,13 @@
   </script>
   
   <style>
-  /* Styles for horizontal layout */
 .tops-section {
   margin-top: 20px;
 }
 
 .tops-container {
   display: flex;
-  gap: 20px; /* Adjust the gap between items as needed */
+  gap: 20px;
 }
 
 .top-item {
@@ -67,7 +64,7 @@
 }
 
 .top-image {
-  width: 100px; /* Set the appropriate size for the tops images */
+  width: 100px;
   height: auto;
   margin-bottom: 10px;
 }

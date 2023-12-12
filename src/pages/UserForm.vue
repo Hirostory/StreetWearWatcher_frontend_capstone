@@ -51,10 +51,10 @@ export default {
 
         getPosts.value()
         // getPosts().value
-        router.push("/");
+        router.push("/")
       };
     } else {
-      buttonLabel = "Create Post";
+      buttonLabel = "Create Post"
 
       handleSubmit = async () => {
         await fetch(styletargetsUrl.value, {
@@ -70,7 +70,7 @@ export default {
         
         getPosts.value()
         // getPosts().value
-        router.push("/");
+        router.push("/")
       };
     }
 

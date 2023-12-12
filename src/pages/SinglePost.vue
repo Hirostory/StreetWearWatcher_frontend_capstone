@@ -39,12 +39,12 @@
     computed: {
       post() {
         const postId = this.$route.params.id;
-        return this.posts.find(post => post._id === postId);
+        return this.posts.find(post => post._id === postId)
         
       },
       topsForPost() {
         if (this.post && this.tops && this.post.tops) {
-          return this.tops.filter(top => this.post.tops.includes(top._id));
+          return this.tops.filter(top => this.post.tops.includes(top._id))
         }
         return [];
       },

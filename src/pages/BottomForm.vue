@@ -7,6 +7,7 @@
       <input type="text" placeholder="Price" v-model="price" />
       <input type="submit" :value="buttonLabel" />
     </form>
+    <button v-on:click="deleteBottom()">Delete</button>
   </template>
   
   <script>
@@ -84,6 +85,19 @@
           router.push("/")
         };
       }
+
+      const deleteBottom = async () => {
+        const postId = route.params.id
+        try {
+          await fetch(`${bottomsUrl.value}/${postId}`, {
+            method: "DELETE",
+          })
+          getBottoms.value()
+          router.push("/");
+         } catch (error) {
+          console.error(error)
+        }
+    }
   
       return {
         name,
@@ -93,6 +107,7 @@
         price,
         handleSubmit,
         buttonLabel,
+        deleteBottom
       };
     },
   };

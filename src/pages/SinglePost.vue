@@ -24,7 +24,6 @@
                 <p>{{ top.comment }}</p> 
                 <router-link :to="{name: 'edittop', params: {id: top._id}}"
                 ><button>Edit Top</button></router-link>
-                <button v-on:click="deleteTop(top._id)">Delete</button>
               </div>
             </div>
           </div>
@@ -44,7 +43,6 @@
                 <p>{{ bottom.comment }}</p> 
                 <router-link :to="{name: 'editbottom', params: {id: bottom._id}}"
                 ><button>Edit Bottom</button></router-link>
-                <button v-on:click="deleteBottom(bottom._id)">Delete</button>
               </div>
             </div>
           </div>
@@ -63,7 +61,6 @@
                 <p>{{ shoe.comment }}</p> 
                 <router-link :to="{name: 'editshoe', params: {id: shoe._id}}"
                 ><button>Edit Shoe</button></router-link>
-                <button v-on:click="deleteShoe(shoe._id)">Delete</button>
               </div>
             </div>
           </div>
@@ -82,7 +79,7 @@
                 <p>{{ outerwear.comment }}</p> 
                 <router-link :to="{name: 'editouterwear', params: {id: outerwear._id}}"
                 ><button>Edit Outerwear</button></router-link>
-                <button v-on:click="deleteOuterwear(outerwear._id)">Delete</button>
+                
               </div>
             </div>
           </div>
@@ -101,7 +98,7 @@
                 <p>{{ accessorie.comment }}</p>
                 <router-link :to="{name: 'editaccessory', params: {id: accessorie._id}}"
                 ><button>Edit Accessory</button></router-link>
-                <button v-on:click="deleteAccessorie(accessorie._id)">Delete</button>
+                
               </div>
             </div>
           </div>
@@ -120,7 +117,7 @@
                 <p>{{ other.comment }}</p>
                 <router-link :to="{name: 'editother', params: {id: other._id}}"
                 ><button>Edit Other</button></router-link>
-                <button v-on:click="deleteOther(other._id)">Delete</button>
+                
               </div>
             </div>
           </div>
@@ -168,10 +165,10 @@
     setup(props) {
       const route = useRoute()
       const router = useRouter()
-      const refreshPage = () => {
-      window.location.reload()
-      }
-      const { posts, styletargetsUrl, getPosts, tops, topsUrl, getTops, bottomsUrl, getBottoms, shoesUrl, getShoes, outerwearsUrl, getOuterwears, accessoriesUrl, getAccessories, othersUrl, getOthers } = toRefs(props)
+      // const refreshPage = () => {
+      // window.location.reload()
+      // }
+      const { posts, styletargetsUrl, getPosts, tops, } = toRefs(props)
 
       const styleId = posts.value.find((post) => post._id === route.params.id)
 
@@ -190,95 +187,10 @@
         }  
     }
 
-    const deleteTop = async (id) => {
-        try {
-          await fetch(`${topsUrl.value}/${id}`, {
-            method: "DELETE",
-          })
-          getTops.value()
-          // router.push("/");
-          refreshPage()
-         } catch (error) {
-          console.error(error)
-        }
-    }
-
-    const deleteBottom = async (id) => {
-        try {
-          await fetch(`${bottomsUrl.value}/${id}`, {
-            method: "DELETE",
-          })
-          getBottoms.value()
-          // router.push("/");
-          refreshPage()
-         } catch (error) {
-          console.error(error)
-        }
-    }
-
-    const deleteShoe = async (id) => {
-        try {
-          await fetch(`${shoesUrl.value}/${id}`, {
-            method: "DELETE",
-          })
-          getShoes.value()
-          // router.push("/");
-          refreshPage()
-         } catch (error) {
-          console.error(error)
-        }
-    }
-
-    const deleteOuterwear = async (id) => {
-        try {
-          await fetch(`${outerwearsUrl.value}/${id}`, {
-            method: "DELETE",
-          })
-          getOuterwears.value()
-          // router.push("/");
-          refreshPage()
-         } catch (error) {
-          console.error(error)
-        }
-    }
-
-    const deleteAccessorie = async (id) => {
-        try {
-          await fetch(`${accessoriesUrl.value}/${id}`, {
-            method: "DELETE",
-          })
-          getAccessories.value()
-          // router.push("/");
-          refreshPage()
-         } catch (error) {
-          console.error(error)
-        }
-    }
-
-    const deleteOther = async (id) => {
-        try {
-          await fetch(`${othersUrl.value}/${id}`, {
-            method: "DELETE",
-          })
-          getOthers.value()
-          // router.push("/");
-          refreshPage()
-         } catch (error) {
-          console.error(error)
-        }
-    }
-
-
     return {
       topId,
       styleId,
       deleteStyleTarget,
-      deleteTop,
-      deleteBottom,
-      deleteShoe,
-      deleteOuterwear,
-      deleteAccessorie,
-      deleteOther
     }
 
     },

@@ -7,6 +7,7 @@
       <input type="text" placeholder="Price" v-model="price" />
       <input type="submit" :value="buttonLabel" />
     </form>
+    <button v-on:click="deleteOuterwear(outerwear._id)">Delete</button>
   </template>
   
   <script>
@@ -84,6 +85,20 @@
           router.push("/")
         };
       }
+
+
+        const deleteOuterwear = async () => {
+        const postId = route.params.id
+        try {
+          await fetch(`${outerwearsUrl.value}/${postId}`, {
+            method: "DELETE",
+          })
+          getOuterwears.value()
+          router.push("/");
+         } catch (error) {
+          console.error(error)
+        }
+    }
   
       return {
         name,
@@ -93,6 +108,7 @@
         price,
         handleSubmit,
         buttonLabel,
+        deleteOuterwear
       };
     },
   };

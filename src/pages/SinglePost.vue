@@ -8,6 +8,8 @@
         <router-link :to="{name: 'edit', params: {id: post.id}}"
             ><button>Edit Todo</button></router-link>
             <button v-on:click="deleteStyleTarget">Delete Target</button>
+
+            {{ console.log("this is top in the function", topsForPost) }}
         <div v-if="topsForPost && topsForPost.length > 0" class="tops-section">
           <h2>Tops</h2>
           <div class="tops-container">
@@ -17,11 +19,30 @@
                 </a>
               <div class="top-details">
                 <p>{{ top.name }}</p>
+                {{ console.log("this is top", top.name) }}
                 <p>{{ top.comment }}</p> 
               </div>
             </div>
           </div>
         </div>
+        {{ console.log("this is botoom in the function", bottomsForPost) }}
+        <div v-if="bottomsForPost && bottomsForPost.length > 0" class="bottoms-section">
+          
+          <h2>Bottoms</h2>
+          <div class="bottoms-container">
+            <div v-for="bottom in bottomsForPost" :key="bottom._id" class="bottom-item">
+                <a :href="bottom.link" target="_blank">
+                    <img :src="bottom.image" :alt="bottom.name" class="bottom-image">
+                </a>
+              <div class="bottom-details">
+                <p>{{ bottom.name }}</p>
+                {{ console.log("this is bottom", bottom.name) }}
+                <p>{{ bottom.comment }}</p> 
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
       <div v-else>
         <p>Loading...</p>
@@ -99,10 +120,10 @@
         return [];
       },
       bottomsForPost() {
-        if(this.post && this.bottoms && this.post.bottoms) {
-          return this.bottoms.filter((bottom) => this.post.bottoms.includes(bottom._id))
+        if (this.post && this.bottoms && this.post.bottoms) {
+          return this.bottoms.filter(bottom => this.post.bottoms.includes(bottom._id))
         }
-        return []
+        return [];
       },
       shoesForPost() {
         if(this.post && this.shoes && this.post.shoes) {
@@ -133,27 +154,27 @@
   </script>
   
   <style>
-.tops-section {
+.tops-section, .bottoms-section {
   margin-top: 20px;
 }
 
-.tops-container {
+.tops-container, .bottoms-container {
   display: flex;
   gap: 20px;
 }
 
-.top-item {
+.top-item, .bottom-item {
   display: flex;
   flex-direction: column;
 }
 
-.top-image {
+.top-image, .bottom-image {
   width: 100px;
   height: auto;
   margin-bottom: 10px;
 }
 
-.top-details {
+.top-details, .bottom-details {
   text-align: left;
 }
   </style>

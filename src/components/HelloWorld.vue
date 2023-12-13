@@ -2,7 +2,11 @@
   <div>
     <div class="main-top-container">
       <div class="title-logo-container">
-      <img src="https://see.fontimg.com/api/renderfont4/Yznaj/eyJyIjoiZnMiLCJoIjo5MywidyI6MTAwMCwiZnMiOjkzLCJmZ2MiOiIjNUU2NjY2IiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/IDMgU3RyZWV0IFdlYXIgV2F0Y2hlciA/ahganirya-personal-use.png" alt="title-logo" class="title-logo" />
+      <!-- <img src="https://see.fontimg.com/api/renderfont4/Yznaj/eyJyIjoiZnMiLCJoIjo5MywidyI6MTAwMCwiZnMiOjkzLCJmZ2MiOiIjNUU2NjY2IiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/IDMgU3RyZWV0IFdlYXIgV2F0Y2hlciA/ahganirya-personal-use.png" alt="title-logo" class="title-logo" /> -->
+      <img src="https://see.fontimg.com/api/renderfont4/GXWP/eyJyIjoiZnMiLCJoIjo5MywidyI6MTAwMCwiZnMiOjkzLCJmZ2MiOiIjNUE2NDY0IiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/Sg/wmfashion.png" alt="title-camera-logo" class="title-logo-person" />
+      <!-- <img src="https://see.fontimg.com/api/renderfont4/EaM04/eyJyIjoiZnMiLCJoIjo2NSwidyI6MTAwMCwiZnMiOjY1LCJmZ2MiOiIjNjE2QjZDIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/YQ/kamera-dings.png" alt="title-camera-logo" class="title-logo" /> -->
+      <img src="https://see.fontimg.com/api/renderfont4/Yznaj/eyJyIjoiZnMiLCJoIjo4NywidyI6MTAwMCwiZnMiOjg3LCJmZ2MiOiIjNUU2NjY2IiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/IFN0cmVldCBXZWFyIFdhdGNoZXIg/ahganirya-personal-use.png" alt="title-logo" class="title-logo" />
+      <img src="https://see.fontimg.com/api/renderfont4/GXWP/eyJyIjoiZnMiLCJoIjo5MywidyI6MTAwMCwiZnMiOjkzLCJmZ2MiOiIjNUE2NDY0IiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/dQ/wmfashion.png" alt="title-camera-logo" class="title-logo-person-2" />
       </div>
       <div class="black-line-1">
 
@@ -130,10 +134,20 @@ export default {
   margin: 20px;
 }
 
+.title-logo-person-2 {
+  margin-left: -5rem;
+  height: 15rem;
+}
+
+.title-logo-person {
+  margin-right: -15rem;
+  height: 15rem;
+}
+
 .title-logo {
-  display: flex;
   height: 100%;
   width: auto;
+  /* margin: 1rem; */
 }
 
 .main-top-container {
@@ -145,8 +159,9 @@ export default {
 
 .black-line-1 {
   height: 3px;
-  width: 1200px;
+  width: 1300px;
   background-color: #5E6666;
   margin: 2rem;
+  margin-top: -1rem;
 }
 </style>

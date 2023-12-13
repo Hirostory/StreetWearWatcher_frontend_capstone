@@ -2,11 +2,14 @@
     <div>
       <router-link to="/"><button>BACK</button></router-link>
       <div v-if="post" class="post">
-        <img :src="post.image" alt="Post Image" class="target-image">
-        <h1>{{ post.description }}</h1>
+        <div>
+          <img :src="post.image" alt="Post Image" class="target-image">
+          <h1>{{ post.description }}</h1>
+        </div>
         <!-- {{ console.log("this is posts", post._id) }} -->
-        <router-link :to="{name: 'edit', params: {id: post.id}}"
-            ><button>Edit Todo</button></router-link>
+          <router-link :to="{name: 'edit', params: {id: post.id}}"
+            ><button>Edit Todo</button>
+          </router-link>
             <button v-on:click="deleteStyleTarget">Delete Target</button>
 
             <!-- {{ console.log("this is top in the function", topsForPost) }} -->

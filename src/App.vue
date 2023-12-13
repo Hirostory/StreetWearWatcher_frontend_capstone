@@ -1,5 +1,5 @@
 <template>
-  <img alt="street image" src="https://i.pinimg.com/564x/fd/0d/3b/fd0d3b6771a4079b99cb9f377e731ab6.jpg">
+  <img class="main-image-logo" alt="street image" src="https://i.pinimg.com/564x/fd/0d/3b/fd0d3b6771a4079b99cb9f377e731ab6.jpg">
   <HelloWorld />
 </template>
 
@@ -23,7 +23,7 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-img {
+.main-image-logo {
   height: 300px;
   width: 400px;
   object-fit: cover;

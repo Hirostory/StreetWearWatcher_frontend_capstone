@@ -42,6 +42,8 @@
                 <p>{{ bottom.name }}</p>
                 {{ console.log("this is bottom", bottom.name) }}
                 <p>{{ bottom.comment }}</p> 
+
+                <button v-on:click="deleteBottom(bottom._id)">Delete</button>
               </div>
             </div>
           </div>
@@ -58,6 +60,8 @@
                 <p>{{ shoe.name }}</p>
                 {{ console.log("this is shoe", shoe.name) }}
                 <p>{{ shoe.comment }}</p> 
+
+                <button v-on:click="deleteShoe(shoe._id)">Delete</button>
               </div>
             </div>
           </div>
@@ -74,6 +78,8 @@
                 <p>{{ outerwear.name }}</p>
                 {{ console.log("this is outerwear", outerwear.name) }}
                 <p>{{ outerwear.comment }}</p> 
+
+                <button v-on:click="deleteOuterwear(outerwear._id)">Delete</button>
               </div>
             </div>
           </div>
@@ -89,7 +95,9 @@
               <div class="accessorie-details">
                 <p>{{ accessorie.name }}</p>
                 {{ console.log("this is accessorie", accessorie.name) }}
-                <p>{{ accessorie.comment }}</p> 
+                <p>{{ accessorie.comment }}</p>
+                
+                <button v-on:click="deleteAccessorie(accessorie._id)">Delete</button>
               </div>
             </div>
           </div>
@@ -105,7 +113,9 @@
               <div class="other-details">
                 <p>{{ other.name }}</p>
                 {{ console.log("this is other", other.name) }}
-                <p>{{ other.comment }}</p> 
+                <p>{{ other.comment }}</p>
+                
+                <button v-on:click="deleteOther(other._id)">Delete</button>
               </div>
             </div>
           </div>
@@ -156,7 +166,7 @@
       const refreshPage = () => {
       window.location.reload()
       }
-      const { posts, styletargetsUrl, getPosts, tops, topsUrl, getTops } = toRefs(props)
+      const { posts, styletargetsUrl, getPosts, tops, topsUrl, getTops, bottomsUrl, getBottoms, shoesUrl, getShoes, outerwearsUrl, getOuterwears, accessoriesUrl, getAccessories, othersUrl, getOthers } = toRefs(props)
 
       const styleId = posts.value.find((post) => post._id === route.params.id)
 
@@ -188,12 +198,82 @@
         }
     }
 
+    const deleteBottom = async (id) => {
+        try {
+          await fetch(`${bottomsUrl.value}/${id}`, {
+            method: "DELETE",
+          })
+          getBottoms.value()
+          // router.push("/");
+          refreshPage()
+         } catch (error) {
+          console.error(error)
+        }
+    }
+
+    const deleteShoe = async (id) => {
+        try {
+          await fetch(`${shoesUrl.value}/${id}`, {
+            method: "DELETE",
+          })
+          getShoes.value()
+          // router.push("/");
+          refreshPage()
+         } catch (error) {
+          console.error(error)
+        }
+    }
+
+    const deleteOuterwear = async (id) => {
+        try {
+          await fetch(`${outerwearsUrl.value}/${id}`, {
+            method: "DELETE",
+          })
+          getOuterwears.value()
+          // router.push("/");
+          refreshPage()
+         } catch (error) {
+          console.error(error)
+        }
+    }
+
+    const deleteAccessorie = async (id) => {
+        try {
+          await fetch(`${accessoriesUrl.value}/${id}`, {
+            method: "DELETE",
+          })
+          getAccessories.value()
+          // router.push("/");
+          refreshPage()
+         } catch (error) {
+          console.error(error)
+        }
+    }
+
+    const deleteOther = async (id) => {
+        try {
+          await fetch(`${othersUrl.value}/${id}`, {
+            method: "DELETE",
+          })
+          getOthers.value()
+          // router.push("/");
+          refreshPage()
+         } catch (error) {
+          console.error(error)
+        }
+    }
+
 
     return {
       topId,
       styleId,
       deleteStyleTarget,
-      deleteTop
+      deleteTop,
+      deleteBottom,
+      deleteShoe,
+      deleteOuterwear,
+      deleteAccessorie,
+      deleteOther
     }
 
     },

@@ -4,14 +4,16 @@
       <div v-if="post" class="post">
         <img :src="post.image" alt="Post Image" class="target-image">
         <h1>{{ post.description }}</h1>
-        {{ console.log("this is posts", post._id) }}
+        <!-- {{ console.log("this is posts", post._id) }} -->
         <router-link :to="{name: 'edit', params: {id: post.id}}"
             ><button>Edit Todo</button></router-link>
             <button v-on:click="deleteStyleTarget">Delete Target</button>
 
-            {{ console.log("this is top in the function", topsForPost) }}
+            <!-- {{ console.log("this is top in the function", topsForPost) }} -->
         <div v-if="topsForPost && topsForPost.length > 0" class="tops-section">
           <h2>Tops</h2>
+          
+          <router-link :to="{name: 'addtop', params: {id: post.id}}"><button>Add a Top</button></router-link>
           <div class="tops-container">
             <div v-for="top in topsForPost" :key="top._id" class="top-item">
                 <a :href="top.link" target="_blank">
@@ -19,8 +21,9 @@
                 </a>
               <div class="top-details">
                 <p>{{ top.name }}</p>
-                {{ console.log("this is top", top.name) }}
                 <p>{{ top.comment }}</p> 
+                <router-link :to="{name: 'edittop', params: {id: top._id}}"
+                ><button>Edit Top</button></router-link>
               </div>
             </div>
           </div>

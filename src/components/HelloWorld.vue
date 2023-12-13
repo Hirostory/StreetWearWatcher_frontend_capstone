@@ -99,6 +99,7 @@ export default {
       getOuterwears,
       getAccessories,
       getOthers,
+      topsUrl,
       othersUrl,
       accessoriesUrl,
       outerwearUrl,

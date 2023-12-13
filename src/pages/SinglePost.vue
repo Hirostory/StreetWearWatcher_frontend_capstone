@@ -39,8 +39,26 @@
       posts: Array,
       styletargets: Array,
       tops: Array,
+      bottoms: Array,
+      shoes: Array,
+      outerwears: Array,
+      accessories: Array,
+      others: Array,
+
+      topsUrl: String,
+      bottomsUrl: String,
+      shoesUrl: String,
+      outerwearsUrl: String,
+      accessoriesUrl: String,
+      othersUrl: String,
       styletargetsUrl: String,
-      getPosts: Function
+
+      getPosts: Function,
+      getBottoms: Function,
+      getShoes: Function,
+      getOuterwears: Function,
+      getAccessories: Function,
+      getOthers: Function
     },
     // props: ["posts", "styletargets", "tops", "styletargetsUrl", "getPosts"],
     setup(props) {
@@ -79,6 +97,36 @@
           return this.tops.filter(top => this.post.tops.includes(top._id))
         }
         return [];
+      },
+      bottomsForPost() {
+        if(this.post && this.bottoms && this.post.bottoms) {
+          return this.bottoms.filter((bottom) => this.post.bottoms.includes(bottom._id))
+        }
+        return []
+      },
+      shoesForPost() {
+        if(this.post && this.shoes && this.post.shoes) {
+          return this.shoes.filter((shoe) => this.post.shoes.includes(shoe._id))
+        }
+        return []
+      },
+      outerwearsForPost() {
+        if(this.post && this.outerwears && this.post.outerwears) {
+          return this.outerwears.filter((outerwear) => this.post.outerwears.includes(outerwear._id))
+        }
+        return []
+      },
+      accessoriesForPost() {
+        if(this.post && this.accessories && this.post.accessories) {
+          return this.accessories.filter((accessorie) => this.post.accessories.includes(accessorie._id))
+        }
+        return []
+      },
+      othersForPost() {
+        if(this.post && this.others && this.post.others) {
+          return this.others.filter((other) => this.post.others.includes(other._id))
+        }
+        return []
       },
     },
   };

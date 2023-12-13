@@ -71,6 +71,7 @@ export default {
         getPosts.value()
         // getPosts().value
         router.push("/")
+        window.location.reload()
       };
     }
 

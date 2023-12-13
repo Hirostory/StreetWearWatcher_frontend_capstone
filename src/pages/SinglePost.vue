@@ -32,6 +32,8 @@
         {{ console.log("this is botoom in the function", bottomsForPost) }}
         <div v-if="bottomsForPost && bottomsForPost.length > 0" class="bottoms-section">
           <h2>Bottoms</h2>
+
+          <router-link :to="{name: 'addbottom', params: {id: post.id}}"><button>Add a Bottom</button></router-link>
           <div class="bottoms-container">
             <div v-for="bottom in bottomsForPost" :key="bottom._id" class="bottom-item">
                 <a :href="bottom.link" target="_blank">
@@ -50,6 +52,8 @@
 
         <div v-if="shoesForPost && shoesForPost.length > 0" class="shoes-section">
           <h2>Shoes</h2>
+
+          <router-link :to="{name: 'addshoe', params: {id: post.id}}"><button>Add a Shoe</button></router-link>
           <div class="shoes-container">
             <div v-for="shoe in shoesForPost" :key="shoe._id" class="shoe-item">
                 <a :href="shoe.link" target="_blank">
@@ -68,6 +72,8 @@
 
         <div v-if="outerwearsForPost && outerwearsForPost.length > 0" class="outerwears-section">
           <h2>Outerwears</h2>
+
+          <router-link :to="{name: 'addouterwear', params: {id: post.id}}"><button>Add a Outerwear</button></router-link>
           <div class="outerwears-container">
             <div v-for="outerwear in outerwearsForPost" :key="outerwear._id" class="outerwear-item">
                 <a :href="outerwear.link" target="_blank">
@@ -87,6 +93,8 @@
 
         <div v-if="accessoriesForPost && accessoriesForPost.length > 0" class="accessories-section">
           <h2>Accessories</h2>
+
+          <router-link :to="{name: 'addaccessory', params: {id: post.id}}"><button>Add a Accessory</button></router-link>
           <div class="accessories-container">
             <div v-for="accessorie in accessoriesForPost" :key="accessorie._id" class="accessorie-item">
                 <a :href="accessorie.link" target="_blank">
@@ -107,6 +115,8 @@
         <div v-if="othersForPost && othersForPost.length > 0" class="others-section">
           <h2>Others</h2>
           <div class="others-container">
+
+            <router-link :to="{name: 'addother', params: {id: post.id}}"><button>Add a Other</button></router-link>
             <div v-for="other in othersForPost" :key="other._id" class="other-item">
                 <a :href="other.link" target="_blank">
                     <img :src="other.image" :alt="other.name" class="other-image">

@@ -24,6 +24,7 @@
                 <p>{{ top.comment }}</p> 
                 <router-link :to="{name: 'edittop', params: {id: top._id}}"
                 ><button>Edit Top</button></router-link>
+                <button v-on:click="deleteTop(top._id)">Delete</button>
               </div>
             </div>
           </div>
@@ -152,9 +153,15 @@
     setup(props) {
       const route = useRoute()
       const router = useRouter()
-      const { posts, styletargetsUrl, getPosts } = toRefs(props)
+      const refreshPage = () => {
+      window.location.reload()
+      }
+      const { posts, styletargetsUrl, getPosts, tops, topsUrl, getTops } = toRefs(props)
 
       const styleId = posts.value.find((post) => post._id === route.params.id)
+
+      const topId = tops.value.find((top) => top._id === route.params.tops)
+      console.log("this is topID: ", topId)
 
       const deleteStyleTarget = async () => {
         try {
@@ -165,12 +172,28 @@
           router.push("/");
          } catch (error) {
           console.error(error)
+        }  
+    }
+
+    const deleteTop = async (id) => {
+        try {
+          await fetch(`${topsUrl.value}/${id}`, {
+            method: "DELETE",
+          })
+          getTops.value()
+          // router.push("/");
+          refreshPage()
+         } catch (error) {
+          console.error(error)
         }
     }
 
+
     return {
+      topId,
       styleId,
       deleteStyleTarget,
+      deleteTop
     }
 
     },

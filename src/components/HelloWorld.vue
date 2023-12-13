@@ -1,6 +1,13 @@
 <template>
   <div>
-    <h1>Street Wear Watcher</h1>
+    <div class="main-top-container">
+      <div class="title-logo-container">
+      <img src="https://see.fontimg.com/api/renderfont4/Yznaj/eyJyIjoiZnMiLCJoIjo5MywidyI6MTAwMCwiZnMiOjkzLCJmZ2MiOiIjNUU2NjY2IiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/IDMgU3RyZWV0IFdlYXIgV2F0Y2hlciA/ahganirya-personal-use.png" alt="title-logo" class="title-logo" />
+      </div>
+      <div class="black-line-1">
+
+      </div>
+    </div>
     <router-link to="/new"><button>Post a Style</button></router-link>
     <router-view :posts="posts" :tops="tops" :styletargets="styletargets" :styletargetsUrl="styletargetsUrl" :topsUrl="topsUrl" :bottomsUrl="bottomsUrl" :shoesUrl="shoesUrl" :outerwearsUrl="outerwearUrl" :accessoriesUrl="accessoriesUrl" :othersUrl="othersUrl" :getPosts="getPosts" :getStyleTargets="getStyleTargets" :getTops="getTops" :getBottoms="getBottoms" :getShoes="getShoes" :getOuterwears="getOuterwears" :getAccessories="getAccessories" :getOthers="getOthers" :bottoms="bottoms" :shoes="shoes" :outerwears="outerwears" :accessories="accessories" :others="others"/>
   </div>
@@ -114,4 +121,32 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.title-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 20px;
+}
+
+.title-logo {
+  display: flex;
+  height: 100%;
+  width: auto;
+}
+
+.main-top-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.black-line-1 {
+  height: 3px;
+  width: 1200px;
+  background-color: #5E6666;
+  margin: 2rem;
+}
+</style>

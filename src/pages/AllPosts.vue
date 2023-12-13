@@ -21,7 +21,7 @@
   <style>
   .post {
     text-align: center;
-    border: 3px solid black;
+    border: 3px solid #5E6666;
     margin: 10px auto;
     width: 80%;
   }

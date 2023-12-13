@@ -126,6 +126,11 @@ export default {
 </script>
 
 <style>
+.{
+  height: 100vh;
+  width: 100vw;
+}
+
 .title-logo-container {
   display: flex;
   align-items: center;

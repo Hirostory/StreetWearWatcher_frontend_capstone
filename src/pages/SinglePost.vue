@@ -42,7 +42,8 @@
                 <p>{{ bottom.name }}</p>
                 {{ console.log("this is bottom", bottom.name) }}
                 <p>{{ bottom.comment }}</p> 
-
+                <router-link :to="{name: 'editbottom', params: {id: bottom._id}}"
+                ><button>Edit Bottom</button></router-link>
                 <button v-on:click="deleteBottom(bottom._id)">Delete</button>
               </div>
             </div>
@@ -60,7 +61,8 @@
                 <p>{{ shoe.name }}</p>
                 {{ console.log("this is shoe", shoe.name) }}
                 <p>{{ shoe.comment }}</p> 
-
+                <router-link :to="{name: 'editshoe', params: {id: shoe._id}}"
+                ><button>Edit Shoe</button></router-link>
                 <button v-on:click="deleteShoe(shoe._id)">Delete</button>
               </div>
             </div>
@@ -78,7 +80,8 @@
                 <p>{{ outerwear.name }}</p>
                 {{ console.log("this is outerwear", outerwear.name) }}
                 <p>{{ outerwear.comment }}</p> 
-
+                <router-link :to="{name: 'editouterwear', params: {id: outerwear._id}}"
+                ><button>Edit Outerwear</button></router-link>
                 <button v-on:click="deleteOuterwear(outerwear._id)">Delete</button>
               </div>
             </div>
@@ -96,7 +99,8 @@
                 <p>{{ accessorie.name }}</p>
                 {{ console.log("this is accessorie", accessorie.name) }}
                 <p>{{ accessorie.comment }}</p>
-                
+                <router-link :to="{name: 'editaccessory', params: {id: accessorie._id}}"
+                ><button>Edit Accessory</button></router-link>
                 <button v-on:click="deleteAccessorie(accessorie._id)">Delete</button>
               </div>
             </div>
@@ -114,7 +118,8 @@
                 <p>{{ other.name }}</p>
                 {{ console.log("this is other", other.name) }}
                 <p>{{ other.comment }}</p>
-                
+                <router-link :to="{name: 'editother', params: {id: other._id}}"
+                ><button>Edit Other</button></router-link>
                 <button v-on:click="deleteOther(other._id)">Delete</button>
               </div>
             </div>

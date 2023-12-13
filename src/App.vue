@@ -24,8 +24,8 @@ export default {
   margin-top: 60px;
 }
 .main-image-logo {
-  height: 300px;
-  width: 400px;
+  height: 200px;
+  width: 300px;
   object-fit: cover;
 }
 </style>

@@ -38,8 +38,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 1200px;
-    width: 800px;
+    height: 980px;
+    width: 650px;
     cursor: pointer;
     position: relative;
     margin: 3rem; 

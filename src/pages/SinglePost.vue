@@ -1,16 +1,28 @@
 <template>
     <div class="single-main-container">
-      <router-link to="/"><button>BACK</button></router-link>
+      <router-link to="/"><button style="background-color: #909f9f; border: #909f9f"  >BACK</button></router-link>
       <div v-if="post" class="post">
+        <div class="corner-box">
+          <img src="https://see.fontimg.com/api/renderfont4/L36OZ/eyJyIjoiZnMiLCJoIjoxMzAsInciOjIwMDAsImZzIjo2NSwiZmdjIjoiIzYxNkI2QyIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/MQ/font-frame-pro.png" alt="border" class="single-corner-border">
+          <img src="https://see.fontimg.com/api/renderfont4/L36OZ/eyJyIjoiZnMiLCJoIjoxMzAsInciOjIwMDAsImZzIjo2NSwiZmdjIjoiIzYxNkI2QyIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/MQ/font-frame-pro.png" alt="border" class="single-corner-border-3">
+          <img src="https://see.fontimg.com/api/renderfont4/GXWP/eyJyIjoiZnMiLCJoIjo0MDAsInciOjIwMDAsImZzIjoyMDAsImZnYyI6IiM1QTY0NjQiLCJiZ2MiOiIjRkZGRkZGIiwidCI6MX0/cg/wmfashion.png" alt="male-person" class="background-person">
+          <img src="https://see.fontimg.com/api/renderfont4/GXWP/eyJyIjoiZnMiLCJoIjo0MDAsInciOjIwMDAsImZzIjoyMDAsImZnYyI6IiM1QTY0NjQiLCJiZ2MiOiIjRkZGRkZGIiwidCI6MX0/eA/wmfashion.png" alt="male-person" class="background-person-2">
         <div class="single-target-container" >
           <img :src="post.image" alt="Post Image" class="target-image">
-          <h3>{{ post.description }}</h3>
-        </div>
-        <!-- {{ console.log("this is posts", post._id) }} -->
-          <router-link :to="{name: 'edit', params: {id: post.id}}"
+          <div class="target-info">
+            <h3>{{ post.description }}</h3>
+           <router-link :to="{name: 'edit', params: {id: post.id}}"
             ><button>Edit Target</button>
           </router-link>
             <button v-on:click="deleteStyleTarget">Delete Target</button>
+          </div>
+        </div>
+        <img src="https://see.fontimg.com/api/renderfont4/L36OZ/eyJyIjoiZnMiLCJoIjoxMzAsInciOjIwMDAsImZzIjo2NSwiZmdjIjoiIzYxNkI2QyIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/MQ/font-frame-pro.png" alt="border" class="single-corner-border-2">
+        <img src="https://see.fontimg.com/api/renderfont4/L36OZ/eyJyIjoiZnMiLCJoIjoxMzAsInciOjIwMDAsImZzIjo2NSwiZmdjIjoiIzYxNkI2QyIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/MQ/font-frame-pro.png" alt="border" class="single-corner-border-4">
+        </div>
+        
+        <!-- {{ console.log("this is posts", post._id) }} -->
+         
 
             <!-- {{ console.log("this is top in the function", topsForPost) }} -->
         <div v-if="topsForPost && topsForPost.length > 0" class="tops-section">
@@ -301,7 +313,7 @@
     margin: 2rem;
   }
 
-  .ingle-main-container, .post {
+  .single-main-container, .post {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -314,14 +326,68 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    position: relative;
+
+    margin: 6rem;
+    border: 3px solid #5E6666;
 
     /* border: red 5px solid; */
 
     height: autopx;
-    width: 500px;
+    width: 600px;
 }
 
+.background-person {
+  position: absolute;
+  height: 100rem;
+  right: 50rem;
+  opacity: .3;
+}
 
+.background-person-2 {
+  position: absolute;
+  height: 100rem;
+  left: 35rem;
+  opacity: .3;
+}
+
+.corner-box {
+  position: relative;
+}
+
+.single-corner-border, .single-corner-border-2, .single-corner-border-3, .single-corner-border-4 {
+  height: 5rem;
+  width: auto;
+  position: absolute;
+}
+
+.single-corner-border {
+  margin-bottom: -6rem;
+  left: 24px;
+  top: 24px;
+  z-index: 3;
+}
+
+.single-corner-border-2 {
+  bottom: 2.5rem;
+  left: 2.5rem;
+  transform: scaleY(-1)
+}
+
+.single-corner-border-3 {
+  left: 64.6rem;
+  top: 23px;
+  z-index: 3;
+  transform: scaleX(-1)
+}
+
+.single-corner-border-4 {
+  bottom: 2.5rem;
+  left: 64.6rem;
+  z-index: 3;
+  transform: scaleY(-1) scaleX(-1);
+}
 .tops-section, .bottoms-section, .shoes-section, .outerwears-section, .accessories-section, .others-section {
 
   margin-top: 20px;
@@ -373,7 +439,7 @@
     transition: opacity 0.3s ease;
 }
 
-.top-hover-box:hover .top-hover-detail, .bottom-hover-box:hover .bottom-hover-detail, .shoe-hover-box:hover .shoe-hover-detail, .outerwear-hover-box:hover .outerwear-hover-detail, .accessory-hover-box:hover .accessory-hover-detail, .other-hover-box:hover .other-hover-detail {
+.top-hover-box:hover .top-hover-detail, .bottom-hover-box:hover .bottom-hover-detail, .shoe-hover-box:hover .shoe-hover-detail, .outerwear-hover-box:hover .outerwear-hover-detail, .accessory-hover-box:hover .accessory-hover-detail, .other-hover-box:hover .other-hover-detail, .single-target-container:hover .target-info {
   opacity: 1;
 }
 

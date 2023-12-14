@@ -28,4 +28,5 @@ export default {
   width: 300px;
   object-fit: cover;
 }
+
 </style>

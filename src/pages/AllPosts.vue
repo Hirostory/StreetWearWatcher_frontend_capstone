@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/new"><button>Post a Style</button></router-link>
+  <router-link to="/new"><button class="button" style="background-color: #909f9f; border: #909f9f" >Post a Style</button></router-link>
    <div class="post-box">
      <div class="post-container" v-for="post of posts" :key="post._id">
         <div>
@@ -74,5 +74,17 @@
 
   .post-container:hover .target-info {
     opacity: 1;
+  }
+
+  .button {
+  background-color: #909f9f;
+  border: 1px solid #909f9f;
+  color: white; /* Adding text color for better visibility */
+  transition: background-color 0.3s, border-color 0.3s; /* Adding transition for smooth effect */
+  }
+
+  .button:hover {
+    background-color: #5e6666; /* Darker gray for background on hover */
+    border-color: #5e6666; /* Darker gray for border on hover */
   }
 </style>

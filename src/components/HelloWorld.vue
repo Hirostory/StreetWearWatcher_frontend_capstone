@@ -149,7 +149,7 @@ body{
 
 .logo-line-2 {
   height: 4rem;
-  transform: scaleX(-1);
+  transform: scaleX(-1)
 }
 
 .logo-line, .logo-line-2 {
@@ -205,5 +205,9 @@ body{
   background-color: #5E6666;
   margin: 2rem;
   margin-top: -1rem;
+}
+
+button {
+  background-color: #5E6666;
 }
 </style>

@@ -3,6 +3,10 @@
     <div class="main-top-container">
       <div class="title-logo-container">
       <div class="whole-logo-container">
+        <div class="main-logo-line">
+          <img src="https://see.fontimg.com/api/renderfont4/qxwd/eyJyIjoiZnMiLCJoIjo2NSwidyI6MTAwMCwiZnMiOjY1LCJmZ2MiOiIjNjE2QjZDIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/dQ/wmdividers1.png" alt="title-camera-logo" class="logo-line" />
+          <img src="https://see.fontimg.com/api/renderfont4/qxwd/eyJyIjoiZnMiLCJoIjo2NSwidyI6MTAwMCwiZnMiOjY1LCJmZ2MiOiIjNjE2QjZDIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/dQ/wmdividers1.png" alt="title-camera-logo" class="logo-line-2" />
+        </div>
         <!-- <img src="https://see.fontimg.com/api/renderfont4/Yznaj/eyJyIjoiZnMiLCJoIjo5MywidyI6MTAwMCwiZnMiOjkzLCJmZ2MiOiIjNUU2NjY2IiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/IDMgU3RyZWV0IFdlYXIgV2F0Y2hlciA/ahganirya-personal-use.png" alt="title-logo" class="title-logo" /> -->
       <img src="https://see.fontimg.com/api/renderfont4/GXWP/eyJyIjoiZnMiLCJoIjo5MywidyI6MTAwMCwiZnMiOjkzLCJmZ2MiOiIjNUE2NDY0IiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/Sg/wmfashion.png" alt="title-camera-logo" class="title-logo-person" />
       <!-- <img src="https://see.fontimg.com/api/renderfont4/EaM04/eyJyIjoiZnMiLCJoIjo2NSwidyI6MTAwMCwiZnMiOjY1LCJmZ2MiOiIjNjE2QjZDIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/YQ/kamera-dings.png" alt="title-camera-logo" class="title-logo" /> -->
@@ -131,6 +135,25 @@ export default {
 body{
   height: 100vh;
   width: 100vw;
+}
+
+.main-logo-line {
+  position: absolute;
+  margin-left: 10rem;
+  margin-top: 3rem;
+}
+
+.logo-line {
+  height: 4rem;
+}
+
+.logo-line-2 {
+  height: 4rem;
+  transform: scaleX(-1);
+}
+
+.logo-line, .logo-line-2 {
+  margin: 1rem;
 }
 
 .mother-box {

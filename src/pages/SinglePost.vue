@@ -14,9 +14,11 @@
 
             <!-- {{ console.log("this is top in the function", topsForPost) }} -->
         <div v-if="topsForPost && topsForPost.length > 0" class="tops-section">
-          <h2>Tops</h2>
+          <div class="item-boxes">
+            <img src="https://see.fontimg.com/api/renderfont4/Yznaj/eyJyIjoiZnMiLCJoIjoxNzQsInciOjIwMDAsImZzIjo4NywiZmdjIjoiIzVFNjY2NiIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/VG9wcw/ahganirya-personal-use.png" alt="TOP-PIC" class="item-images" />
           
-          <router-link :to="{name: 'addtop', params: {id: post.id}}"><button>Add a Top</button></router-link>
+            <router-link :to="{name: 'addtop', params: {id: post.id}}"><button>Add a Top</button></router-link>
+          </div>
           <div class="tops-container">
             <div v-for="top in topsForPost" :key="top._id" class="top-item">
                 <div class="top-hover-box">
@@ -38,9 +40,11 @@
 
         {{ console.log("this is botoom in the function", bottomsForPost) }}
         <div v-if="bottomsForPost && bottomsForPost.length > 0" class="bottoms-section">
-          <h2>Bottoms</h2>
+          <div class="item-boxes">
+            <img src="https://see.fontimg.com/api/renderfont4/Yznaj/eyJyIjoiZnMiLCJoIjoxNzQsInciOjIwMDAsImZzIjo4NywiZmdjIjoiIzVFNjY2NiIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/Qm90dG9tcw/ahganirya-personal-use.png" alt="BOTTOM-PIC" class="item-images" />
 
-          <router-link :to="{name: 'addbottom', params: {id: post.id}}"><button>Add a Bottom</button></router-link>
+            <router-link :to="{name: 'addbottom', params: {id: post.id}}"><button>Add a Bottom</button></router-link>
+          </div>
           <div class="bottoms-container">
             <div v-for="bottom in bottomsForPost" :key="bottom._id" class="bottom-item">
                 <div class="bottom-hover-box">
@@ -62,9 +66,11 @@
         </div>
 
         <div v-if="shoesForPost && shoesForPost.length > 0" class="shoes-section">
-          <h2>Shoes</h2>
+          <div class="item-boxes">
+            <img src="https://see.fontimg.com/api/renderfont4/Yznaj/eyJyIjoiZnMiLCJoIjoxNzQsInciOjIwMDAsImZzIjo4NywiZmdjIjoiIzVFNjY2NiIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/U2hvZXM/ahganirya-personal-use.png" alt="SHOE-PIC" class="item-images" />
 
-          <router-link :to="{name: 'addshoe', params: {id: post.id}}"><button>Add a Shoe</button></router-link>
+            <router-link :to="{name: 'addshoe', params: {id: post.id}}"><button>Add a Shoe</button></router-link>
+          </div>
           <div class="shoes-container">
             <div v-for="shoe in shoesForPost" :key="shoe._id" class="shoe-item">
                 <div class="shoe-hover-box">
@@ -86,9 +92,11 @@
         </div>
 
         <div v-if="outerwearsForPost && outerwearsForPost.length > 0" class="outerwears-section">
-          <h2>Outerwears</h2>
+          <div class="item-boxes">
+            <img src="https://see.fontimg.com/api/renderfont4/Yznaj/eyJyIjoiZnMiLCJoIjoxNzQsInciOjIwMDAsImZzIjo4NywiZmdjIjoiIzVFNjY2NiIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/T3V0ZXJ3ZWFycw/ahganirya-personal-use.png" alt="OUTERWEAR-PIC" class="item-images" />
 
-          <router-link :to="{name: 'addouterwear', params: {id: post.id}}"><button>Add a Outerwear</button></router-link>
+            <router-link :to="{name: 'addouterwear', params: {id: post.id}}"><button>Add a Outerwear</button></router-link>
+          </div>
           <div class="outerwears-container">
             <div v-for="outerwear in outerwearsForPost" :key="outerwear._id" class="outerwear-item">
                 <div class="outerwear-hover-box">
@@ -110,9 +118,11 @@
         </div>
 
         <div v-if="accessoriesForPost && accessoriesForPost.length > 0" class="accessories-section">
-          <h2>Accessories</h2>
+          <div class="item-boxes">
+            <img src="https://see.fontimg.com/api/renderfont4/Yznaj/eyJyIjoiZnMiLCJoIjoxNzQsInciOjIwMDAsImZzIjo4NywiZmdjIjoiIzVFNjY2NiIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/QWNjZXNzb3JpZXM/ahganirya-personal-use.png" alt="ACCESSORY-PIC" class="item-images" />
 
-          <router-link :to="{name: 'addaccessory', params: {id: post.id}}"><button>Add an Accessory</button></router-link>
+            <router-link :to="{name: 'addaccessory', params: {id: post.id}}"><button>Add an Accessory</button></router-link>
+          </div>
           <div class="accessories-container">
             <div v-for="accessorie in accessoriesForPost" :key="accessorie._id" class="accessorie-item">
                 <div class="accessory-hover-box">
@@ -134,9 +144,11 @@
         </div>
 
         <div v-if="othersForPost && othersForPost.length > 0" class="others-section">
-          <h2>Others</h2>
+          <div class="item-boxes">
+            <img src="https://see.fontimg.com/api/renderfont4/Yznaj/eyJyIjoiZnMiLCJoIjoxNzQsInciOjIwMDAsImZzIjo4NywiZmdjIjoiIzVFNjY2NiIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/T3RoZXJz/ahganirya-personal-use.png" alt="OTHER-PIC" class="item-images" />
 
-          <router-link :to="{name: 'addother', params: {id: post.id}}"><button>Add a Other</button></router-link>
+            <router-link :to="{name: 'addother', params: {id: post.id}}"><button>Add a Other</button></router-link>
+          </div>
           <div class="others-container">
             <div v-for="other in othersForPost" :key="other._id" class="other-item">
                 <div class="other-hover-box">
@@ -276,6 +288,19 @@
   
   <style>
 
+  .item-boxes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .item-images {
+    height: 5rem;
+    width: auto;
+    margin: 2rem;
+  }
+
   .ingle-main-container, .post {
     display: flex;
     align-items: center;
@@ -298,6 +323,7 @@
 
 
 .tops-section, .bottoms-section, .shoes-section, .outerwears-section, .accessories-section, .others-section {
+
   margin-top: 20px;
   border: blue 5px solid;
   width: 900px;
@@ -309,14 +335,15 @@
 .tops-container, .bottoms-container, .shoes-container, .outerwears-container, .accessories-container, .others-container {
   
   display: flex;
-  gap: 20px;
+  /* gap: 20px; */
 }
 
 .top-item, .bottom-item, .shoe-item, .outerwear-item, .accessorie-item, .other-item {
   display: flex;
   flex-direction: column;
-  
   height: auto;
+  margin: 1rem;
+
   width: 300px;
   /* border: yellow 5px solid; */
 }

@@ -1,13 +1,19 @@
 <template>
-    <form v-on:submit.prevent="handleSubmit">
-      <input type="text" placeholder="Name" v-model="name" />
-      <input type="text" placeholder="Image URL" v-model="image" />
-      <textarea type="text" placeholder="comment" v-model="comment"></textarea>
-      <input type="text" placeholder="Link URL" v-model="link" />
-      <input type="text" placeholder="Price" v-model="price" />
-      <input type="submit" :value="buttonLabel" />
-    </form>
-    <button v-on:click="deleteOuterwear(outerwear._id)">Delete</button>
+    <div>
+        <img src="https://see.fontimg.com/api/renderfont4/qxwd/eyJyIjoiZnMiLCJoIjoxMzAsInciOjIwMDAsImZzIjo2NSwiZmdjIjoiIzYxNkI2QyIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/aQ/wmdividers1.png" alt="Single-Banner" class="single-banner">
+        <div class="form-box">
+            <form v-on:submit.prevent="handleSubmit">
+            <input type="text" placeholder="Name" v-model="name" />
+            <input type="text" placeholder="Image URL" v-model="image" />
+            <textarea type="text" placeholder="comment" v-model="comment"></textarea>
+            <input type="text" placeholder="Link URL" v-model="link" />
+            <input type="text" placeholder="Price" v-model="price" />
+            <input class="main-submit-button" type="submit" :value="buttonLabel" />
+            </form>
+        </div>
+        <img src="https://see.fontimg.com/api/renderfont4/qxwd/eyJyIjoiZnMiLCJoIjoxMzAsInciOjIwMDAsImZzIjo2NSwiZmdjIjoiIzYxNkI2QyIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/aQ/wmdividers1.png" alt="Single-Banner" class="single-banner-2">
+    </div>
+    <button class="delete-button" v-on:click="deleteOuterwear(outerwear._id)">Delete</button>
   </template>
   
   <script>

@@ -1,6 +1,9 @@
 <template>
     <div class="single-main-container">
-      <router-link to="/"><button style="background-color: #909f9f; border: #909f9f"  >BACK</button></router-link>
+      <div class="artbox-button">
+        <img src="https://see.fontimg.com/api/renderfont4/L36OZ/eyJyIjoiZnMiLCJoIjoxMzAsInciOjIwMDAsImZzIjo2NSwiZmdjIjoiIzYxNkI2QyIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/eg/font-frame-pro.png" alt="backgroundbutton" class="button-background">
+        <router-link to="/"><button class="back-button">BACK</button></router-link>
+      </div>
       <div v-if="post" class="post">
         <div class="corner-box">
           <img src="https://see.fontimg.com/api/renderfont4/L36OZ/eyJyIjoiZnMiLCJoIjoxMzAsInciOjIwMDAsImZzIjo2NSwiZmdjIjoiIzYxNkI2QyIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/MQ/font-frame-pro.png" alt="border" class="single-corner-border">
@@ -12,9 +15,9 @@
           <div class="target-info">
             <h3>{{ post.description }}</h3>
            <router-link :to="{name: 'edit', params: {id: post.id}}"
-            ><button>Edit Target</button>
+            ><button class="default-button" >Edit Target</button>
           </router-link>
-            <button v-on:click="deleteStyleTarget">Delete Target</button>
+            <button class="delete-button" v-on:click="deleteStyleTarget">Delete Target</button>
           </div>
         </div>
         <img src="https://see.fontimg.com/api/renderfont4/L36OZ/eyJyIjoiZnMiLCJoIjoxMzAsInciOjIwMDAsImZzIjo2NSwiZmdjIjoiIzYxNkI2QyIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/MQ/font-frame-pro.png" alt="border" class="single-corner-border-2">
@@ -27,9 +30,11 @@
             <!-- {{ console.log("this is top in the function", topsForPost) }} -->
         <div v-if="topsForPost && topsForPost.length > 0" class="tops-section">
           <div class="item-boxes">
+            <img src="https://see.fontimg.com/api/renderfont4/qxwd/eyJyIjoiZnMiLCJoIjoxMzAsInciOjIwMDAsImZzIjo2NSwiZmdjIjoiIzYxNkI2QyIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/aQ/wmdividers1.png" alt="Single-Banner" class="single-banner">
+            <div class="black-line-2"></div>
             <img src="https://see.fontimg.com/api/renderfont4/Yznaj/eyJyIjoiZnMiLCJoIjoxNzQsInciOjIwMDAsImZzIjo4NywiZmdjIjoiIzVFNjY2NiIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/VG9wcw/ahganirya-personal-use.png" alt="TOP-PIC" class="item-images" />
           
-            <router-link :to="{name: 'addtop', params: {id: post.id}}"><button>Add a Top</button></router-link>
+            <router-link :to="{name: 'addtop', params: {id: post.id}}"><button class="default-button" >Add a Top</button></router-link>
           </div>
           <div class="tops-container">
             <div v-for="top in topsForPost" :key="top._id" class="top-item">
@@ -40,7 +45,7 @@
                   <div class="top-hover-detail">
                     <p>{{ top.name }}</p>
                     <router-link :to="{name: 'edittop', params: {id: top._id}}"
-                    ><button>Edit Top</button></router-link>
+                    ><button class="default-button" >Edit Top</button></router-link>
                     </div>
                 </div>
               <div class="top-details">
@@ -49,13 +54,16 @@
             </div>
           </div>
         </div>
+        <div class="black-line-3"></div>
 
         {{ console.log("this is botoom in the function", bottomsForPost) }}
         <div v-if="bottomsForPost && bottomsForPost.length > 0" class="bottoms-section">
           <div class="item-boxes">
+            <img src="https://see.fontimg.com/api/renderfont4/qxwd/eyJyIjoiZnMiLCJoIjoxMzAsInciOjIwMDAsImZzIjo2NSwiZmdjIjoiIzYxNkI2QyIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/aQ/wmdividers1.png" alt="Single-Banner" class="single-banner">
+            <div class="black-line-2"></div>
             <img src="https://see.fontimg.com/api/renderfont4/Yznaj/eyJyIjoiZnMiLCJoIjoxNzQsInciOjIwMDAsImZzIjo4NywiZmdjIjoiIzVFNjY2NiIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/Qm90dG9tcw/ahganirya-personal-use.png" alt="BOTTOM-PIC" class="item-images" />
 
-            <router-link :to="{name: 'addbottom', params: {id: post.id}}"><button>Add a Bottom</button></router-link>
+            <router-link :to="{name: 'addbottom', params: {id: post.id}}"><button class="default-button" >Add a Bottom</button></router-link>
           </div>
           <div class="bottoms-container">
             <div v-for="bottom in bottomsForPost" :key="bottom._id" class="bottom-item">
@@ -66,7 +74,7 @@
                   <div class="bottom-hover-detail">
                     <p>{{ bottom.name }}</p>
                     <router-link :to="{name: 'editbottom', params: {id: bottom._id}}"
-                    ><button>Edit Bottom</button></router-link>
+                    ><button class="default-button" >Edit Bottom</button></router-link>
                   </div>
                 </div>
               <div class="bottom-details">
@@ -76,12 +84,15 @@
             </div>
           </div>
         </div>
+        <div class="black-line-3"></div>
 
         <div v-if="shoesForPost && shoesForPost.length > 0" class="shoes-section">
           <div class="item-boxes">
+            <img src="https://see.fontimg.com/api/renderfont4/qxwd/eyJyIjoiZnMiLCJoIjoxMzAsInciOjIwMDAsImZzIjo2NSwiZmdjIjoiIzYxNkI2QyIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/aQ/wmdividers1.png" alt="Single-Banner" class="single-banner">
+            <div class="black-line-2"></div>
             <img src="https://see.fontimg.com/api/renderfont4/Yznaj/eyJyIjoiZnMiLCJoIjoxNzQsInciOjIwMDAsImZzIjo4NywiZmdjIjoiIzVFNjY2NiIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/U2hvZXM/ahganirya-personal-use.png" alt="SHOE-PIC" class="item-images" />
 
-            <router-link :to="{name: 'addshoe', params: {id: post.id}}"><button>Add a Shoe</button></router-link>
+            <router-link :to="{name: 'addshoe', params: {id: post.id}}"><button class="default-button" >Add a Shoe</button></router-link>
           </div>
           <div class="shoes-container">
             <div v-for="shoe in shoesForPost" :key="shoe._id" class="shoe-item">
@@ -92,7 +103,7 @@
                 <div class="shoe-hover-detail">
                   <p>{{ shoe.name }}</p>
                 <router-link :to="{name: 'editshoe', params: {id: shoe._id}}"
-                ><button>Edit Shoe</button></router-link>
+                ><button class="default-button" >Edit Shoe</button></router-link>
                 </div>
                 </div>
               <div class="shoe-details">
@@ -102,12 +113,15 @@
             </div>
           </div>
         </div>
+        <div class="black-line-3"></div>
 
         <div v-if="outerwearsForPost && outerwearsForPost.length > 0" class="outerwears-section">
           <div class="item-boxes">
+            <img src="https://see.fontimg.com/api/renderfont4/qxwd/eyJyIjoiZnMiLCJoIjoxMzAsInciOjIwMDAsImZzIjo2NSwiZmdjIjoiIzYxNkI2QyIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/aQ/wmdividers1.png" alt="Single-Banner" class="single-banner">
+            <div class="black-line-2"></div>
             <img src="https://see.fontimg.com/api/renderfont4/Yznaj/eyJyIjoiZnMiLCJoIjoxNzQsInciOjIwMDAsImZzIjo4NywiZmdjIjoiIzVFNjY2NiIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/T3V0ZXJ3ZWFycw/ahganirya-personal-use.png" alt="OUTERWEAR-PIC" class="item-images" />
 
-            <router-link :to="{name: 'addouterwear', params: {id: post.id}}"><button>Add a Outerwear</button></router-link>
+            <router-link :to="{name: 'addouterwear', params: {id: post.id}}"><button class="default-button" >Add a Outerwear</button></router-link>
           </div>
           <div class="outerwears-container">
             <div v-for="outerwear in outerwearsForPost" :key="outerwear._id" class="outerwear-item">
@@ -118,7 +132,7 @@
                  <div class="outerwear-hover-detail">
                   <p>{{ outerwear.name }}</p>
                  <router-link :to="{name: 'editouterwear', params: {id: outerwear._id}}"
-                ><button>Edit Outerwear</button></router-link>
+                ><button class="default-button" >Edit Outerwear</button></router-link>
                  </div>
                 </div>
               <div class="outerwear-details">
@@ -128,12 +142,15 @@
             </div>
           </div>
         </div>
+        <div class="black-line-3"></div>
 
         <div v-if="accessoriesForPost && accessoriesForPost.length > 0" class="accessories-section">
           <div class="item-boxes">
+            <img src="https://see.fontimg.com/api/renderfont4/qxwd/eyJyIjoiZnMiLCJoIjoxMzAsInciOjIwMDAsImZzIjo2NSwiZmdjIjoiIzYxNkI2QyIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/aQ/wmdividers1.png" alt="Single-Banner" class="single-banner">
+            <div class="black-line-2"></div>
             <img src="https://see.fontimg.com/api/renderfont4/Yznaj/eyJyIjoiZnMiLCJoIjoxNzQsInciOjIwMDAsImZzIjo4NywiZmdjIjoiIzVFNjY2NiIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/QWNjZXNzb3JpZXM/ahganirya-personal-use.png" alt="ACCESSORY-PIC" class="item-images" />
 
-            <router-link :to="{name: 'addaccessory', params: {id: post.id}}"><button>Add an Accessory</button></router-link>
+            <router-link :to="{name: 'addaccessory', params: {id: post.id}}"><button class="default-button" >Add an Accessory</button></router-link>
           </div>
           <div class="accessories-container">
             <div v-for="accessorie in accessoriesForPost" :key="accessorie._id" class="accessorie-item">
@@ -144,7 +161,7 @@
                 <div class="accessory-hover-detail">
                   <p>{{ accessorie.name }}</p>
                 <router-link :to="{name: 'editaccessory', params: {id: accessorie._id}}"
-                ><button>Edit Accessory</button></router-link>
+                ><button class="default-button" >Edit Accessory</button></router-link>
                 </div>
                 </div>
               <div class="accessorie-details">
@@ -154,12 +171,15 @@
             </div>
           </div>
         </div>
+        <div class="black-line-3"></div>
 
         <div v-if="othersForPost && othersForPost.length > 0" class="others-section">
           <div class="item-boxes">
+            <img src="https://see.fontimg.com/api/renderfont4/qxwd/eyJyIjoiZnMiLCJoIjoxMzAsInciOjIwMDAsImZzIjo2NSwiZmdjIjoiIzYxNkI2QyIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/aQ/wmdividers1.png" alt="Single-Banner" class="single-banner">
+            <div class="black-line-2"></div>
             <img src="https://see.fontimg.com/api/renderfont4/Yznaj/eyJyIjoiZnMiLCJoIjoxNzQsInciOjIwMDAsImZzIjo4NywiZmdjIjoiIzVFNjY2NiIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/T3RoZXJz/ahganirya-personal-use.png" alt="OTHER-PIC" class="item-images" />
 
-            <router-link :to="{name: 'addother', params: {id: post.id}}"><button>Add a Other</button></router-link>
+            <router-link :to="{name: 'addother', params: {id: post.id}}"><button class="default-button" >Add a Other</button></router-link>
           </div>
           <div class="others-container">
             <div v-for="other in othersForPost" :key="other._id" class="other-item">
@@ -170,7 +190,7 @@
                  <div class="other-hover-detail">
                   <p>{{ other.name }}</p>
                    <router-link :to="{name: 'editother', params: {id: other._id}}"
-                   ><button>Edit Other</button></router-link>
+                   ><button class="default-button" >Edit Other</button></router-link>
                  </div>
                 </div>
               <div class="other-details">
@@ -180,6 +200,7 @@
             </div>
           </div>
         </div>
+        <div class="black-line-3"></div>
 
       </div>
       <div v-else>
@@ -300,11 +321,38 @@
   
   <style>
 
-  .item-boxes{
+  .artbox-button {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+  }
+
+  .button-background {
+    height: 4.5rem;
+    width: auto;
+    
+  }
+
+  .back-button {
+    position: absolute;
+    background-color: #909f9f;
+    border: 1px solid #909f9f;
+    margin-top: -4.1rem;
+    margin-left: -4.9rem;
+    transition: background-color 0.3s, border-color 0.3s
+  }
+
+  .back-button:hover {
+    background-color: #5e6666;
+    border-color: #5e6666;
+  }
+
+  .item-boxes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .item-images {
@@ -356,6 +404,20 @@
   position: relative;
 }
 
+.single-banner {
+  height: auto;
+  width: 25rem;
+  margin: 2rem;
+}
+
+.single-banner-2 {
+  height: auto;
+  width: 25rem;
+  margin: 2rem;
+  margin-top: 4rem;
+  transform: scaleY(-1);
+}
+
 .single-corner-border, .single-corner-border-2, .single-corner-border-3, .single-corner-border-4 {
   height: 5rem;
   width: auto;
@@ -391,7 +453,7 @@
 .tops-section, .bottoms-section, .shoes-section, .outerwears-section, .accessories-section, .others-section {
 
   margin-top: 20px;
-  border: blue 5px solid;
+  /* border: #5e6666 .5px solid; */
   width: 900px;
   height: auto;
 
@@ -452,10 +514,16 @@
 .top-details, .bottom-details, .shoe-details, .outerwear-details, .accessorie-details, .other-details {
   height: auto;
   width: 300px;
+  padding: 1rem;
+  color: rgb(110, 107, 107);
   text-align: left;
   word-wrap: normal;
+  border-bottom-left-radius: 2%;
+  border-bottom-right-radius: 2%;
 
-  border: red 5px solid;
+  background-color: #b0bfbf5d;
+
+  /* border: red 5px solid; */
 }
   </style>
   

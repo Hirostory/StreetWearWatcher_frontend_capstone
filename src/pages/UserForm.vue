@@ -1,9 +1,15 @@
 <template>
-  <form v-on:submit.prevent="handleSubmit">
+  <div>
+    <img src="https://see.fontimg.com/api/renderfont4/qxwd/eyJyIjoiZnMiLCJoIjoxMzAsInciOjIwMDAsImZzIjo2NSwiZmdjIjoiIzYxNkI2QyIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/aQ/wmdividers1.png" alt="Single-Banner" class="single-banner">
+    <div class="form-box">
+    <form v-on:submit.prevent="handleSubmit">
     <input type="text" placeholder="Image URL" v-model="image" />
     <textarea type="text" placeholder="Description" v-model="description"></textarea>
-    <input type="submit" :value="buttonLabel" />
-  </form>
+    <input type="submit" :value="buttonLabel" class="main-submit-button" />
+    </form>
+  </div>
+  <img src="https://see.fontimg.com/api/renderfont4/qxwd/eyJyIjoiZnMiLCJoIjoxMzAsInciOjIwMDAsImZzIjo2NSwiZmdjIjoiIzYxNkI2QyIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/aQ/wmdividers1.png" alt="Single-Banner" class="single-banner-2">
+  </div>
 </template>
 
 <script>
@@ -86,9 +92,24 @@ export default {
 </script>
 
 <style>
-input,
-textarea {
-  display: block;
-  margin-bottom: 10px;
+
+.form-box {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+
+  margin-top: 1rem;
 }
+
+.main-submit-button {
+  background-color: #909f9f !important;
+  border: 1px solid #909f9f !important;
+  transition: background-color 0.3s, border-color 0.3s !important;
+}
+
+.main-submit-button:hover {
+  background-color: #5e6666 !important;
+  border-color: #5e6666 !important;
+}
+
 </style>

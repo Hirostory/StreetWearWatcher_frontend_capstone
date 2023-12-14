@@ -1,6 +1,8 @@
 <template>
-  <img class="main-image-logo" alt="street image" src="https://i.pinimg.com/564x/fd/0d/3b/fd0d3b6771a4079b99cb9f377e731ab6.jpg">
+  <div class="top-border-block"></div>
+  <!-- <img class="main-image-logo" alt="street image" src="https://www.mensfashionmagazine.com/wp-content/uploads/2015/05/featured-image6.jpg"> -->
   <HelloWorld />
+  <div class="bottom-border-block"></div>
 </template>
 
 <script>
@@ -25,8 +27,27 @@ export default {
 }
 .main-image-logo {
   height: 200px;
-  width: 300px;
+  width: 100%;
+  margin-top: -5rem;
   object-fit: cover;
+  object-position: 0rem -15rem;
+}
+
+.top-border-block {
+  width: 100%;
+  height: 100px;
+  background-color: #5E6666;
+  margin-top: -10rem;
+  margin-bottom: 5rem;
+  opacity: .5;
+}
+
+.bottom-border-block {
+  width: 100%;
+  height: 50px;
+  background-color: #5E6666;
+  margin-top: 15rem;
+  opacity: .5;
 }
 
 </style>

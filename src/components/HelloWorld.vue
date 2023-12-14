@@ -14,9 +14,7 @@
       <img src="https://see.fontimg.com/api/renderfont4/GXWP/eyJyIjoiZnMiLCJoIjo5MywidyI6MTAwMCwiZnMiOjkzLCJmZ2MiOiIjNUE2NDY0IiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/dQ/wmfashion.png" alt="title-camera-logo" class="title-logo-person-2" />
       </div>
       </div>
-      <div class="black-line-1">
-
-      </div>
+      <div class="black-line-1"></div>
     </div>
     
     <router-view :posts="posts" :tops="tops" :styletargets="styletargets" :styletargetsUrl="styletargetsUrl" :topsUrl="topsUrl" :bottomsUrl="bottomsUrl" :shoesUrl="shoesUrl" :outerwearsUrl="outerwearUrl" :accessoriesUrl="accessoriesUrl" :othersUrl="othersUrl" :getPosts="getPosts" :getStyleTargets="getStyleTargets" :getTops="getTops" :getBottoms="getBottoms" :getShoes="getShoes" :getOuterwears="getOuterwears" :getAccessories="getAccessories" :getOthers="getOthers" :bottoms="bottoms" :shoes="shoes" :outerwears="outerwears" :accessories="accessories" :others="others"/>
@@ -135,6 +133,7 @@ export default {
 body{
   height: 100vh;
   width: 100vw;
+  margin: 0;
 }
 
 .main-logo-line {
@@ -207,7 +206,46 @@ body{
   margin-top: -1rem;
 }
 
+.black-line-2 {
+  height: 3px;
+  width: 600px;
+  background-color: #5E6666;
+  margin: 2rem;
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+}
+
+.black-line-3 {
+  height: 3px;
+  width: 1000px;
+  background-color: #5E6666;
+  margin: 2rem;
+}
+
 button {
   background-color: #5E6666;
 }
+
+.delete-button {
+  background-color: #909f9f;
+  border: 1px solid #909f9f;
+  transition: background-color 0.3s, border-color 0.3s
+}
+
+.delete-button:hover {
+  background-color: #5e6666;
+  border-color: #5e6666;
+}
+
+.default-button {
+  background-color: #909f9f;
+  border: 1px solid #909f9f;
+  transition: background-color 0.3s, border-color 0.3s
+}
+
+.default-button:hover {
+  background-color: #5e6666;
+  border-color: #5e6666;
+}
+
 </style>

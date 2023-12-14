@@ -18,7 +18,7 @@
 
       </div>
     </div>
-    <router-link to="/new"><button>Post a Style</button></router-link>
+    
     <router-view :posts="posts" :tops="tops" :styletargets="styletargets" :styletargetsUrl="styletargetsUrl" :topsUrl="topsUrl" :bottomsUrl="bottomsUrl" :shoesUrl="shoesUrl" :outerwearsUrl="outerwearUrl" :accessoriesUrl="accessoriesUrl" :othersUrl="othersUrl" :getPosts="getPosts" :getStyleTargets="getStyleTargets" :getTops="getTops" :getBottoms="getBottoms" :getShoes="getShoes" :getOuterwears="getOuterwears" :getAccessories="getAccessories" :getOthers="getOthers" :bottoms="bottoms" :shoes="shoes" :outerwears="outerwears" :accessories="accessories" :others="others"/>
   </div>
 </template>

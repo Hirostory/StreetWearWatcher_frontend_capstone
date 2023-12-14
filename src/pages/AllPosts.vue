@@ -1,14 +1,15 @@
 <template>
+  <router-link to="/new"><button>Post a Style</button></router-link>
    <div class="post-box">
-    <div class="post-container" v-for="post of posts" :key="post._id">
-      <div>
-        <router-link :to="{ name: 'post', params: { id: post._id } }">
-        <img :src="post.image" alt="Post Image" class="target-image">
-        <h1 class="target-info" >{{ post.description }}</h1>
-      </router-link>
+     <div class="post-container" v-for="post of posts" :key="post._id">
+        <div>
+          <router-link :to="{ name: 'post', params: { id: post._id } }">
+          <img :src="post.image" alt="Post Image" class="target-image">
+          <h1 class="target-info" >{{ post.description }}</h1>
+        </router-link>
+        </div>
+        <!-- <img src="https://see.fontimg.com/api/renderfont4/EaM04/eyJyIjoiZnMiLCJoIjo5MywidyI6MTAwMCwiZnMiOjkzLCJmZ2MiOiIjNUE2NDY0IiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/YQ/kamera-dings.png" /> -->
       </div>
-      <!-- <img src="https://see.fontimg.com/api/renderfont4/EaM04/eyJyIjoiZnMiLCJoIjo5MywidyI6MTAwMCwiZnMiOjkzLCJmZ2MiOiIjNUE2NDY0IiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/YQ/kamera-dings.png" /> -->
-    </div>
   </div>
 </template>
   

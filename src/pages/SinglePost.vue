@@ -1,14 +1,14 @@
 <template>
-    <div>
+    <div class="single-main-container">
       <router-link to="/"><button>BACK</button></router-link>
       <div v-if="post" class="post">
-        <div>
+        <div class="single-target-container" >
           <img :src="post.image" alt="Post Image" class="target-image">
-          <h1>{{ post.description }}</h1>
+          <h3>{{ post.description }}</h3>
         </div>
         <!-- {{ console.log("this is posts", post._id) }} -->
           <router-link :to="{name: 'edit', params: {id: post.id}}"
-            ><button>Edit Todo</button>
+            ><button>Edit Target</button>
           </router-link>
             <button v-on:click="deleteStyleTarget">Delete Target</button>
 
@@ -19,14 +19,18 @@
           <router-link :to="{name: 'addtop', params: {id: post.id}}"><button>Add a Top</button></router-link>
           <div class="tops-container">
             <div v-for="top in topsForPost" :key="top._id" class="top-item">
-                <a :href="top.link" target="_blank">
+                <div class="top-hover-box">
+                  <a :href="top.link" target="_blank">
                     <img :src="top.image" :alt="top.name" class="top-image">
-                </a>
+                  </a>
+                  <div class="top-hover-detail">
+                    <p>{{ top.name }}</p>
+                    <router-link :to="{name: 'edittop', params: {id: top._id}}"
+                    ><button>Edit Top</button></router-link>
+                    </div>
+                </div>
               <div class="top-details">
-                <p>{{ top.name }}</p>
                 <p>{{ top.comment }}</p> 
-                <router-link :to="{name: 'edittop', params: {id: top._id}}"
-                ><button>Edit Top</button></router-link>
               </div>
             </div>
           </div>
@@ -39,15 +43,19 @@
           <router-link :to="{name: 'addbottom', params: {id: post.id}}"><button>Add a Bottom</button></router-link>
           <div class="bottoms-container">
             <div v-for="bottom in bottomsForPost" :key="bottom._id" class="bottom-item">
-                <a :href="bottom.link" target="_blank">
+                <div class="bottom-hover-box">
+                  <a :href="bottom.link" target="_blank">
                     <img :src="bottom.image" :alt="bottom.name" class="bottom-image">
-                </a>
+                  </a>
+                  <div class="bottom-hover-detail">
+                    <p>{{ bottom.name }}</p>
+                    <router-link :to="{name: 'editbottom', params: {id: bottom._id}}"
+                    ><button>Edit Bottom</button></router-link>
+                  </div>
+                </div>
               <div class="bottom-details">
-                <p>{{ bottom.name }}</p>
                 {{ console.log("this is bottom", bottom.name) }}
                 <p>{{ bottom.comment }}</p> 
-                <router-link :to="{name: 'editbottom', params: {id: bottom._id}}"
-                ><button>Edit Bottom</button></router-link>
               </div>
             </div>
           </div>
@@ -59,15 +67,19 @@
           <router-link :to="{name: 'addshoe', params: {id: post.id}}"><button>Add a Shoe</button></router-link>
           <div class="shoes-container">
             <div v-for="shoe in shoesForPost" :key="shoe._id" class="shoe-item">
-                <a :href="shoe.link" target="_blank">
+                <div class="shoe-hover-box">
+                  <a :href="shoe.link" target="_blank">
                     <img :src="shoe.image" :alt="shoe.name" class="shoe-image">
                 </a>
-              <div class="shoe-details">
-                <p>{{ shoe.name }}</p>
-                {{ console.log("this is shoe", shoe.name) }}
-                <p>{{ shoe.comment }}</p> 
+                <div class="shoe-hover-detail">
+                  <p>{{ shoe.name }}</p>
                 <router-link :to="{name: 'editshoe', params: {id: shoe._id}}"
                 ><button>Edit Shoe</button></router-link>
+                </div>
+                </div>
+              <div class="shoe-details">
+                {{ console.log("this is shoe", shoe.name) }}
+                <p>{{ shoe.comment }}</p> 
               </div>
             </div>
           </div>
@@ -79,16 +91,19 @@
           <router-link :to="{name: 'addouterwear', params: {id: post.id}}"><button>Add a Outerwear</button></router-link>
           <div class="outerwears-container">
             <div v-for="outerwear in outerwearsForPost" :key="outerwear._id" class="outerwear-item">
-                <a :href="outerwear.link" target="_blank">
+                <div class="outerwear-hover-box">
+                  <a :href="outerwear.link" target="_blank">
                     <img :src="outerwear.image" :alt="outerwear.name" class="outerwear-image">
                 </a>
+                 <div class="outerwear-hover-detail">
+                  <p>{{ outerwear.name }}</p>
+                 <router-link :to="{name: 'editouterwear', params: {id: outerwear._id}}"
+                ><button>Edit Outerwear</button></router-link>
+                 </div>
+                </div>
               <div class="outerwear-details">
-                <p>{{ outerwear.name }}</p>
                 {{ console.log("this is outerwear", outerwear.name) }}
                 <p>{{ outerwear.comment }}</p> 
-                <router-link :to="{name: 'editouterwear', params: {id: outerwear._id}}"
-                ><button>Edit Outerwear</button></router-link>
-                
               </div>
             </div>
           </div>
@@ -97,19 +112,22 @@
         <div v-if="accessoriesForPost && accessoriesForPost.length > 0" class="accessories-section">
           <h2>Accessories</h2>
 
-          <router-link :to="{name: 'addaccessory', params: {id: post.id}}"><button>Add a Accessory</button></router-link>
+          <router-link :to="{name: 'addaccessory', params: {id: post.id}}"><button>Add an Accessory</button></router-link>
           <div class="accessories-container">
             <div v-for="accessorie in accessoriesForPost" :key="accessorie._id" class="accessorie-item">
-                <a :href="accessorie.link" target="_blank">
+                <div class="accessory-hover-box">
+                  <a :href="accessorie.link" target="_blank">
                     <img :src="accessorie.image" :alt="accessorie.name" class="accessorie-image">
                 </a>
-              <div class="accessorie-details">
-                <p>{{ accessorie.name }}</p>
-                {{ console.log("this is accessorie", accessorie.name) }}
-                <p>{{ accessorie.comment }}</p>
+                <div class="accessory-hover-detail">
+                  <p>{{ accessorie.name }}</p>
                 <router-link :to="{name: 'editaccessory', params: {id: accessorie._id}}"
                 ><button>Edit Accessory</button></router-link>
-                
+                </div>
+                </div>
+              <div class="accessorie-details">
+                {{ console.log("this is accessorie", accessorie.name) }}
+                <p>{{ accessorie.comment }}</p>
               </div>
             </div>
           </div>
@@ -117,20 +135,23 @@
 
         <div v-if="othersForPost && othersForPost.length > 0" class="others-section">
           <h2>Others</h2>
-          <div class="others-container">
 
-            <router-link :to="{name: 'addother', params: {id: post.id}}"><button>Add a Other</button></router-link>
+          <router-link :to="{name: 'addother', params: {id: post.id}}"><button>Add a Other</button></router-link>
+          <div class="others-container">
             <div v-for="other in othersForPost" :key="other._id" class="other-item">
-                <a :href="other.link" target="_blank">
+                <div class="other-hover-box">
+                  <a :href="other.link" target="_blank">
                     <img :src="other.image" :alt="other.name" class="other-image">
-                </a>
+                 </a>
+                 <div class="other-hover-detail">
+                  <p>{{ other.name }}</p>
+                   <router-link :to="{name: 'editother', params: {id: other._id}}"
+                   ><button>Edit Other</button></router-link>
+                 </div>
+                </div>
               <div class="other-details">
-                <p>{{ other.name }}</p>
                 {{ console.log("this is other", other.name) }}
                 <p>{{ other.comment }}</p>
-                <router-link :to="{name: 'editother', params: {id: other._id}}"
-                ><button>Edit Other</button></router-link>
-                
               </div>
             </div>
           </div>
@@ -254,11 +275,39 @@
   </script>
   
   <style>
+
+  .ingle-main-container, .post {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+
+  .single-target-container  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* border: red 5px solid; */
+
+    height: autopx;
+    width: 500px;
+}
+
+
 .tops-section, .bottoms-section, .shoes-section, .outerwears-section, .accessories-section, .others-section {
   margin-top: 20px;
+  border: blue 5px solid;
+  width: 900px;
+  height: auto;
+
+  overflow: auto;
 }
 
 .tops-container, .bottoms-container, .shoes-container, .outerwears-container, .accessories-container, .others-container {
+  
   display: flex;
   gap: 20px;
 }
@@ -266,16 +315,54 @@
 .top-item, .bottom-item, .shoe-item, .outerwear-item, .accessorie-item, .other-item {
   display: flex;
   flex-direction: column;
+  
+  height: auto;
+  width: 300px;
+  /* border: yellow 5px solid; */
+}
+
+.top-hover-box, .bottom-hover-box, .shoe-hover-box, .outerwear-hover-box, .accessory-hover-box, .other-hover-box {
+  width: 300px;
+  height: 400px;
+  cursor: pointer;
+  position: relative;
+}
+
+.top-hover-detail, .bottom-hover-detail, .shoe-hover-detail, .outerwear-hover-detail, .accessory-hover-detail, .other-hover-detail {
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: aliceblue;
+    padding: 15px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.6);
+    opacity:0;
+    transition: opacity 0.3s ease;
+}
+
+.top-hover-box:hover .top-hover-detail, .bottom-hover-box:hover .bottom-hover-detail, .shoe-hover-box:hover .shoe-hover-detail, .outerwear-hover-box:hover .outerwear-hover-detail, .accessory-hover-box:hover .accessory-hover-detail, .other-hover-box:hover .other-hover-detail {
+  opacity: 1;
 }
 
 .top-image, .bottom-image, .shoe-image, .outerwear-image, .accessorie-image, .other-image {
-  width: 100px;
-  height: auto;
-  margin-bottom: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .top-details, .bottom-details, .shoe-details, .outerwear-details, .accessorie-details, .other-details {
+  height: auto;
+  width: 300px;
   text-align: left;
+  word-wrap: normal;
+
+  border: red 5px solid;
 }
   </style>
   

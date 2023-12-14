@@ -1,6 +1,7 @@
 <template>
   <router-link to="/new"><button class="button" style="background-color: #909f9f; border: #909f9f" >Post a Style</button></router-link>
    <div class="post-box">
+    <!-- <img src="https://see.fontimg.com/api/renderfont4/GXWP/eyJyIjoiZnMiLCJoIjo0MDAsInciOjIwMDAsImZzIjoyMDAsImZnYyI6IiM1QTY0NjQiLCJiZ2MiOiIjRkZGRkZGIiwidCI6MX0/ag/wmfashion.png" alt="big-moder" class="big-model"> -->
      <div class="post-container" v-for="post of posts" :key="post._id">
         <div>
           <router-link :to="{ name: 'post', params: { id: post._id } }">
@@ -23,6 +24,14 @@
   </script>
   
   <style>
+
+  /* .big-model {
+    position: absolute;
+    height: 500%;
+    width: auto;
+    margin-right: -130rem
+  } */
+
   .post-box {
     display: flex;
     flex-direction: row;

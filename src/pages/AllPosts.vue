@@ -1,8 +1,14 @@
 <template>
-  <router-link to="/new"><button class="button" style="background-color: #909f9f; border: #909f9f" >Post a Style</button></router-link>
+  <div class="main-post-container">
+    <router-link to="/new"><button class="button" style="background-color: #909f9f; border: #909f9f" >Post a Style</button></router-link>
+    <img src="https://see.fontimg.com/api/renderfont4/L36OZ/eyJyIjoiZnMiLCJoIjo0MDAsInciOjIwMDAsImZzIjoyMDAsImZnYyI6IiMyOTNCMzciLCJiZ2MiOiIjRkZGRkZGIiwidCI6MX0/Tw/font-frame-pro.png" class="main-post-image"/>
+    
+  </div>
    <div class="post-box">
     <!-- <img src="https://see.fontimg.com/api/renderfont4/GXWP/eyJyIjoiZnMiLCJoIjo0MDAsInciOjIwMDAsImZzIjoyMDAsImZnYyI6IiM1QTY0NjQiLCJiZ2MiOiIjRkZGRkZGIiwidCI6MX0/ag/wmfashion.png" alt="big-moder" class="big-model"> -->
+    
      <div class="post-container" v-for="post of posts" :key="post._id">
+      <!-- <img src="https://see.fontimg.com/api/renderfont4/qxwd/eyJyIjoiZnMiLCJoIjoyNDAsInciOjIwMDAsImZzIjoxMjAsImZnYyI6IiM2MTZCNkMiLCJiZ2MiOiIjRkZGRkZGIiwidCI6MX0/Zg/wmdividers1.png" class="side-l" /> -->
         <div>
           <router-link :to="{ name: 'post', params: { id: post._id } }">
           <img :src="post.image" alt="Post Image" class="target-image">
@@ -96,4 +102,27 @@
     background-color: #5e6666; /* Darker gray for background on hover */
     border-color: #5e6666; /* Darker gray for border on hover */
   }
+
+  .main-post-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-post-image {
+    margin-top: -1rem;
+    height: 7rem;
+    width: 20rem;
+    position: absolute;
+    z-index: -1;
+  }
+
+  /* .side-l {
+    margin-top: -2rem;
+    height: 5rem;
+    position: absolute;
+    transform: scale();
+    z-index: -2;
+  } */
 </style>
